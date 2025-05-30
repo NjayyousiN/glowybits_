@@ -2,7 +2,6 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { ImageData } from "@/types/images";
-import { redirect } from "next/navigation";
 
 // Maximum number of images per page
 const LIMIT = 10;

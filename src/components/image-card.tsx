@@ -34,8 +34,10 @@ export default function ImageCard({ image }: ImageCardProps) {
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const [isFavorited, setIsFavorited] = useState<boolean>(false);
   const supabase = createClient();
+
   // Parses the title of format hexacode-filename.extension --> filename
   const toDisplayTitle = extractFilename(image.title);
+
   const { mutateAsync: handleInteractionMutation } = useMutation({
     mutationFn: ({
       image_id,
@@ -58,7 +60,7 @@ export default function ImageCard({ image }: ImageCardProps) {
       }
     };
     fetchUser();
-  }, []);
+  });
 
   return (
     <div className="relative group rounded-lg overflow-hidden border border-border drop-shadow-accent-muted hover:drop-shadow-lg">

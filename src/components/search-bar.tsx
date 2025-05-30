@@ -9,21 +9,21 @@ export function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Sets value of query parameter "query"
-  const createQueryString = (query: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("query", query);
-    return params.toString();
-  };
-
   // Debounce API calls to fetch images
   useEffect(() => {
+    // Sets value of query parameter "query"
+    const createQueryString = (query: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("query", query);
+      return params.toString();
+    };
+
     const timeout = setTimeout(() => {
       router.push(`?${createQueryString(inputValue)}`);
     }, 500); // 500ms delay
 
     return () => clearTimeout(timeout);
-  }, [inputValue]);
+  }, [inputValue, router, searchParams]);
 
   return (
     <div className={`relative`}>

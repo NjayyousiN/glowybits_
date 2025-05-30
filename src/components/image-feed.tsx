@@ -6,7 +6,8 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { getImages } from "@/services/images";
 import ImageCard from "./image-card";
-import SkeletonCard from "./image-loading";
+import { toast } from "sonner";
+import ImageLoader from "./image-loading";
 
 export default function ImageFeed() {
   const { ref, inView } = useInView();
@@ -34,8 +35,12 @@ export default function ImageFeed() {
 
   return (
     <div className="m-5">
-      {isPending && <SkeletonCard number_of_cards={10} />}
-      {isError && <p className="text-red-500">Error loading images.</p>}
+      {isPending && <ImageLoader number_of_cards={10} />}
+      {isError &&
+        toast.message("Error Occurred!", {
+          description:
+            "An error has happened while trying to fetch page images. Please try refreshing the page.",
+        })}
       {isSuccess && (
         <section className="masonry columns-3 gap-1">
           {images.pages

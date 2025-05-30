@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { User } from "@supabase/supabase-js";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { SquareMenu, LogIn, UserRound, Compass, Upload } from "lucide-react";
 import LogoutButton from "./logout-button";
 import {
@@ -52,15 +51,13 @@ export default function NavMenu({ user }: NavMenuProps) {
             Upload
           </Link>
           {user && (
-            <MenuItem>
-              <Link
-                href="/profile"
-                className="flex items-center text-body font-bold p-4 gap-x-1 rounded-md hover:bg-background transition-all ease-in hover:text-title"
-              >
-                <UserRound width={20} height={20} />
-                Profile
-              </Link>
-            </MenuItem>
+            <Link
+              href="/profile"
+              className="flex items-center text-body font-bold p-4 gap-x-1 rounded-md hover:bg-background transition-all ease-in hover:text-title"
+            >
+              <UserRound width={20} height={20} />
+              Profile
+            </Link>
           )}
         </div>
       </PopoverContent>

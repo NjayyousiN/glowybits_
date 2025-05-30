@@ -1,10 +1,10 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-interface SkeletonCardProps {
+interface ImageLoaderProps {
   number_of_cards: number;
 }
 
-export default function SkeletonCard({ number_of_cards }: SkeletonCardProps) {
+export default function ImageLoader({ number_of_cards }: ImageLoaderProps) {
   return (
     <div className="columns-3 gap-1">
       {Array.from({ length: number_of_cards }).map((_, idx) => (

@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} min-h-screen`}>
         <Header />
         <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
-        <Toaster />
+        <Toaster richColors />
       </body>
     </html>
   );

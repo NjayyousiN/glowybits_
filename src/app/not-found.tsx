@@ -20,9 +20,9 @@ export default function NotFound() {
               Page Not Found
             </h2>
             <p className="text-lg text-body max-w-md mx-auto leading-relaxed">
-              Sorry, we couldn't find the page you're looking for. The image or
-              page you requested may have been moved, deleted, or the URL might
-              be incorrect.
+              Sorry, we could not find the page you are looking for. The image
+              or page you requested may have been moved, deleted, or the URL
+              might be incorrect.
             </p>
           </div>
 
