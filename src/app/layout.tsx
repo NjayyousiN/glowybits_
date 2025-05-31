@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Header from "@/components/header";
 import { Toaster } from "sonner";
 import QueryClientProviderWrapper from "@/providers/queryClient";
 import "./globals.css";
@@ -23,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} min-h-screen`}>
-        <Header />
-        <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
-        <Toaster richColors />
+      <body className={`${poppins.variable}`}>
+        <QueryClientProviderWrapper>
+          <main>{children}</main>
+        </QueryClientProviderWrapper>
+        <Toaster richColors expand={false} />
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 
 export async function login(formData: FormData) {
@@ -13,17 +12,28 @@ export async function login(formData: FormData) {
 
   try {
     const { error } = await supabase.auth.signInWithPassword(data);
-    if (error) throw error;
+    if (error) {
+      return {
+        message: "Invalid Credentials",
+        status: 401,
+      };
+    }
 
     revalidatePath("/", "layout");
-    redirect("/");
+    return {
+      message: "Login successful",
+      status: 200,
+    };
   } catch (error) {
     console.error("Error logging in:", error);
-    return { error: "Invalid email or password" };
+    return {
+      message: "API error occured while trying to sign in.",
+      status: 500,
+    };
   }
 }
 
-export async function register(formData: FormData) {
+export async function registerUser(formData: FormData) {
   const supabase = await createClient();
   const data = {
     email: formData.get("email") as string,
@@ -43,13 +53,24 @@ export async function register(formData: FormData) {
         },
       },
     });
-    if (error) throw error;
+    if (error) {
+      return {
+        message: "Failed to register user, user already exists",
+        status: 422,
+      };
+    }
 
     revalidatePath("/", "layout");
-    redirect("/");
+    return {
+      message: "User registered successfully",
+      status: 200,
+    };
   } catch (error) {
     console.error("Error registering user:", error);
-    return { error: "Failed to register user" };
+    return {
+      message: "API error occured while trying to sign up.",
+      status: 500,
+    };
   }
 }
 
@@ -60,9 +81,11 @@ export async function logOut() {
     if (error) throw error;
 
     revalidatePath("/", "layout");
-    redirect("/");
   } catch (error) {
     console.error("Error logging out:", error);
-    return { error: `Failed to log out: ${error}` };
+    return {
+      message: "API error occured while trying to sign out",
+      status: 500,
+    };
   }
 }

@@ -36,7 +36,7 @@ export default function NotFound() {
               Go Home
             </Link>
             <Link
-              href="/explore"
+              href="/"
               className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-foreground px-6 py-3 rounded-lg font-medium border border-border transition-colors"
             >
               <Search className="h-5 w-5" />
@@ -55,7 +55,7 @@ export default function NotFound() {
                 className="flex flex-col items-center gap-2 p-4 bg-white rounded-lg border border-border hover:border-accent hover:bg-accent-muted transition-all group"
               >
                 <Upload className="h-6 w-6 text-body group-hover:text-accent" />
-                <span className="text-sm font-medium text-[var(--subtitle)]">
+                <span className="text-sm font-medium text-subtitle">
                   Upload Image
                 </span>
               </Link>
@@ -64,7 +64,7 @@ export default function NotFound() {
                 className="flex flex-col items-center gap-2 p-4 bg-white rounded-lg border border-border hover:border-accent hover:bg-accent-muted transition-all group"
               >
                 <Search className="h-6 w-6 text-body group-hover:text-accent" />
-                <span className="text-sm font-medium text-[var(--subtitle)]">
+                <span className="text-sm font-medium text-subtitle">
                   Browse Gallery
                 </span>
               </Link>
