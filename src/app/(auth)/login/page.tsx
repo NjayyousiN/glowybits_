@@ -1,6 +1,5 @@
 import Image from "next/image";
 import LoginForm from "@/components/login-form";
-import { Home } from "lucide-react";
 
 export default function LoginPage() {
   return (
