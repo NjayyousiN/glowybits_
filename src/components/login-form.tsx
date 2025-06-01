@@ -53,10 +53,10 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-y-7 w-full">
+    <div className="flex flex-col items-center gap-y-7 ">
       <Logo />
 
-      <form onSubmit={handleSubmit(handleLogin)} className="space-y-6 w-full">
+      <form onSubmit={handleSubmit(handleLogin)} className="space-y-6">
         <div className="space-y-1">
           <Label htmlFor="email">Email</Label>
           <Input
