@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -8,9 +9,8 @@ import { login } from "@/services/auth";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Home, LogIn } from "lucide-react";
-import { Logo } from "./logo";
-import Link from "next/link";
 import { Label } from "./ui/label";
+import Logo from "./logo";
 
 // Login form schema creation
 const loginSchema = z.object({

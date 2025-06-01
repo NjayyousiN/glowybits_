@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -9,9 +10,8 @@ import { Home, UserPen } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { Logo } from "./logo";
 import { Label } from "./ui/label";
+import Logo from "./logo";
 
 // Registeration form schema creation
 const registerSchema = z.object({

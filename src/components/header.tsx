@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
-import { Upload, LogIn, Compass, User, Sparkles } from "lucide-react";
+import { Upload, LogIn, Compass, User } from "lucide-react";
 import LogoutButton from "./logout-button";
 import NavMenu from "./nav-menu";
+import Logo from "./logo";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -12,17 +13,7 @@ export default async function Header() {
   return (
     <header className="p-7 bg-foreground drop-shadow-foreground drop-shadow-sm">
       <nav className="flex justify- items-center">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-xl font-semibold"
-        >
-          <div className="bg-gradient-to-br from-accent to-accent-hover p-1.5 rounded-lg shadow-lg">
-            <Sparkles className="h-5 w-5 text-white" />
-          </div>
-          <span className="bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent font-bold">
-            GlowyBits
-          </span>
-        </Link>
+        <Logo />
         <div className="hidden md:flex justify-evenly items-center gap-x-10 ml-auto">
           {!user ? (
             <Link
