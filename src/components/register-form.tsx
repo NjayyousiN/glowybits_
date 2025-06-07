@@ -87,6 +87,8 @@ export default function RegisterForm() {
             {...register("email")}
             id="email"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             type="text"
             placeholder="user@example.com"
             className={`${errors.email && "border-error"}`}
@@ -102,6 +104,8 @@ export default function RegisterForm() {
             {...register("password")}
             id="password"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             type="password"
             placeholder="Min. 8 characters long"
             className={`${errors.password && "border-error"}`}
@@ -117,6 +121,8 @@ export default function RegisterForm() {
             {...register("full_name")}
             id="full_name"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             type="text"
             className={`${errors.full_name && "border-error"}`}
             placeholder="e.g., Mohammed Ahmad"
@@ -132,6 +138,8 @@ export default function RegisterForm() {
             {...register("username")}
             id="username"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             type="text"
             className={`${errors.username && "border-error"}`}
             placeholder="Display Name"
@@ -147,6 +155,8 @@ export default function RegisterForm() {
             {...register("bio")}
             id="bio"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             className={`min-h-[100px] resize-none ${
               errors.bio && "border-error"
             }`}
@@ -161,6 +171,8 @@ export default function RegisterForm() {
           type="submit"
           className="flex justify-center items-center w-full text-title font-bold p-2 gap-x-1 rounded-md transition-all ease-in hover:bg-foreground hover:text-accent-contrast hover:cursor-pointer disabled:bg-disabled"
           disabled={isSubmitting}
+          tabIndex={isSubmitting ? -1 : 0}
+          aria-disabled={isSubmitting}
         >
           {!isSubmitting && <UserPen width={20} height={20} />}
           {isSubmitting ? "Registering..." : "Register"}

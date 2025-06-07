@@ -53,7 +53,7 @@ export default function NavMenu({ user }: NavMenuProps) {
           {user && (
             <Link
               href="/profile"
-              className="flex items-center text-body font-bold p-4 gap-x-1 rounded-md hover:bg-background transition-all ease-in hover:text-title"
+              className="flex items-center text-body font-bold text-sm p-2 gap-x-1 rounded-md hover:bg-background transition-all ease-in hover:text-title"
             >
               <UserRound width={20} height={20} />
               Profile

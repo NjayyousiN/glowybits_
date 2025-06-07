@@ -25,7 +25,7 @@ export async function getImages({
   }
 }
 
-export async function get_user_images() {
+export async function getUserImages() {
   const supabase = await createClient();
 
   try {
@@ -67,7 +67,7 @@ export async function get_user_images() {
   }
 }
 
-export async function upload_image(formData: FormData) {
+export async function uploadImage(formData: FormData) {
   const supabase = await createClient();
 
   try {
@@ -86,7 +86,8 @@ export async function upload_image(formData: FormData) {
     const title = formData.get("title") as string;
     const tags = formData.get("tags");
     const description = formData.get("description") as string;
-    const is_private = formData.get("is_private");
+    const category = formData.get("category") as string;
+    const is_private = formData.get("is_private") as string;
     const filename = title || image.name;
     const random_hex = Math.random().toString(16).substring(2, 6);
 
@@ -96,13 +97,22 @@ export async function upload_image(formData: FormData) {
         metadata: {
           tags,
           description,
+          category,
           is_private,
           is_deleted: false,
         },
       });
 
-    if (error) throw error;
-    return data;
+    if (error) {
+      return {
+        message: "An error has occured when trying to upload image.",
+        status: 500,
+      };
+    }
+    return {
+      message: data,
+      status: 200,
+    };
   } catch (error) {
     console.error("Error uploading image:", error);
     return { error: "Failed to upload image" };

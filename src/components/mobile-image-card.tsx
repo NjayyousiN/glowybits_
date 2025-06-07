@@ -132,10 +132,10 @@ export default function MobileImageCard({
                   className={`${
                     isLiked
                       ? "fill-red-500 text-red-500"
-                      : "fill-none text-body"
+                      : "fill-none text-black"
                   } group-hover:text-red-400`}
                 />
-                <span className="text-xs text-body group-hover:text-red-400">
+                <span className="text-xs text-black group-hover:text-red-400">
                   Like
                 </span>
               </button>
@@ -162,10 +162,10 @@ export default function MobileImageCard({
                   className={`${
                     isFavorited
                       ? "fill-amber-500 text-amber-500"
-                      : "fill-none text-body"
+                      : "fill-none text-black"
                   } group-hover:text-amber-400`}
                 />
-                <span className="text-xs text-body group-hover:text-amber-400">
+                <span className="text-xs text-black group-hover:text-amber-400">
                   Favorite
                 </span>
               </button>
@@ -184,11 +184,11 @@ export default function MobileImageCard({
                 }}
               >
                 <Download
-                  className="text-body group-hover:text-accent"
+                  className="text-accent group-hover:text-accent"
                   width={28}
                   height={28}
                 />
-                <span className="text-xs text-body group-hover:text-accent">
+                <span className="text-xs text-accent group-hover:text-accent">
                   Download
                 </span>
               </button>

@@ -142,7 +142,7 @@ export default function DesktopImageCard({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="relative aspect-[16/9] overflow-hidden rounded-lg space-y-4">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg space-y-4">
           <Image
             src={image.url}
             alt={image.title}
@@ -170,7 +170,7 @@ export default function DesktopImageCard({
               height={35}
               className={`${
                 isLiked ? "fill-red-500 text-red-500" : "fill-none"
-              } text-white transition-all ease-in hover:cursor-pointer hover:text-red-400`}
+              } text-black transition-all ease-in hover:cursor-pointer hover:text-red-400`}
             />
           </button>
 
@@ -193,7 +193,7 @@ export default function DesktopImageCard({
               height={35}
               className={`${
                 isFavorited ? "fill-red-500 text-red-500" : "fill-none"
-              } text-white transition-all ease-in hover:cursor-pointer hover:text-amber-400`}
+              } text-black transition-all ease-in hover:cursor-pointer hover:text-amber-400`}
             />
           </button>
           <button
@@ -208,7 +208,7 @@ export default function DesktopImageCard({
             }}
           >
             <Download
-              className="text-white hover:cursor-pointer hover:text-accent-hover"
+              className="text-black hover:cursor-pointer hover:text-accent-hover"
               width={35}
               height={35}
             />

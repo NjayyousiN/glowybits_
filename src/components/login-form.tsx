@@ -64,6 +64,8 @@ export default function LoginForm() {
             id="email"
             type="text"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             placeholder="user@example.com"
             className={`${errors.email && "border-error"}`}
           />
@@ -79,6 +81,8 @@ export default function LoginForm() {
             id="password"
             type="password"
             disabled={isSubmitting}
+            tabIndex={isSubmitting ? -1 : 0}
+            aria-disabled={isSubmitting}
             placeholder="Enter your password"
             className={`${errors.password && "border-error"}`}
           />
@@ -91,6 +95,8 @@ export default function LoginForm() {
           type="submit"
           className="flex justify-center items-center w-full text-title font-bold p-2 gap-x-1 rounded-md transition-all ease-in hover:bg-foreground hover:text-accent-contrast hover:cursor-pointer disabled:bg-disabled"
           disabled={isSubmitting}
+          tabIndex={isSubmitting ? -1 : 0}
+          aria-disabled={isSubmitting}
         >
           {!isSubmitting && <LogIn width={20} height={20} />}
           {isSubmitting ? "Logging in..." : "Login"}

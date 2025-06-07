@@ -44,7 +44,7 @@ export function SearchBar() {
 
         {/* Search Button */}
         <button
-          className="px-4 py-3 text-center text-body hover:text-foreground transition-colors hover:font-bold hover:cursor-pointer"
+          className="hidden px-4 py-3 text-center text-body hover:text-foreground transition-colors hover:font-bold hover:cursor-pointer md:block"
           aria-label="Search"
         >
           <Search size={20} />

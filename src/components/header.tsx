@@ -12,7 +12,7 @@ export default async function Header() {
   } = await supabase.auth.getUser();
   return (
     <header className="p-7 bg-foreground drop-shadow-foreground drop-shadow-sm">
-      <nav className="flex justify- items-center">
+      <nav className="flex items-center">
         <Logo />
         <div className="hidden md:flex justify-evenly items-center gap-x-10 ml-auto">
           {!user ? (
@@ -51,7 +51,7 @@ export default async function Header() {
           )}
         </div>
         {/* {Small Screen navigation menu} */}
-        <div className="md:hidden">
+        <div className="ml-auto md:hidden">
           <NavMenu user={user} />
         </div>
       </nav>
